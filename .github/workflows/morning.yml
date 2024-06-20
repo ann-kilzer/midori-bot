@@ -1,4 +1,4 @@
-name: midori-bot
+name: morning
 
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  build:
+  edit:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -23,7 +23,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: convert to Japanese
-        run: sed 's/World/世界/' hello.c > hello.c
+        run: |
+          sed 's/World/世界/' hello.c > hello.c.jp 
+          mv hello.c.jp hello.c
 
       - name: compile
         run: gcc hello.c
@@ -40,5 +42,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           ref: ${{ github.head_ref }}
+          commit_message: Automated Change
 
   
