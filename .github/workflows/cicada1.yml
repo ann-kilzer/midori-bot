@@ -30,7 +30,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: bug time 🐛
         run: |
-          sed 's/cicada /セミ/' util/cicada.c > tmp 
+          sed 's/cicada/セミ/' util/cicada.c > tmp 
           mv tmp util/cicada.c
 
       - name: compile
