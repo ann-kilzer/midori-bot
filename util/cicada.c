@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// function to make the sound of a セミ every 17 loops
+// function to make the sound of a cicada every 17 loops
 int main() {
     int n = 1000;
 
